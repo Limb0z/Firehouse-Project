@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="map2.js"></script>
+    <script src="chat.js"></script>
+    <style>
+        body, div{
+            height: 100%;
+        }
+        b.name {
+            color: blue;
+        }
+        .row{
+            display:flex
+        }
+        .column{
+            flex: 33.33%;
+            padding:5px;
+        }
+    </style>
+</head>
+
+<body onload="loadPieChart(); loadMap(); loadBarChart(); setInterval(loadChat, 2000);" style="background-color:#fafa85;">  
+    <center><h1>FIREHOUSE PROJECT</h1></center>
+    <center><h3>By Justin Lim</h3></center>
+    <br/>
+    <div class="row">
+        <div class="column">
+            <img src="http://static.panoramio.com/photos/large/29870382.jpg" height="400" width="400"/>
+        </div>
+        <div class="column">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.l-FOojoXOnNjkjPQyhMUzgHaHa&pid=15.1&P=0&w=300&h=300"/ height="400" width="400"/>
+        </div>
+        <div class="column">
+            <img src="https://i.pinimg.com/originals/df/f0/ba/dff0bae47d420670ddddde0dc8c86cc6.jpg"/ height="400" width="400"/>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <center><h2>Firehouses per Borough</h2></center>
+    <center><div id="pie"></div></center>
+    <hr/>
+    <center><h2>Communites and Firehouses Within</h2></center>
+    <div id="bar"></div>
+    <hr/>
+    <center><h2>Map of Firehouses in NYC</h2></center>
+    <div id="map"></div>
+    <hr/>
+    <h2>Comment Section</h2>
+    Name: <input type="text" id="name">
+    Message: <input type="text" id="message" onKeyPress="checkEnter(event);">
+    <button onClick="sendMessage();">Send</button>
+    <hr/>
+    <div id="chat"></div><br/>
+</body>
+</html>
